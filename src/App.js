@@ -23,16 +23,19 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {Provider, useDispatch} from 'react-redux';
+import {store} from './redux/store';
+import {usersFetch} from './redux/actions';
+import Test from './components/Test';
 
 const App = () => {
-  console.log('test');
   return (
-    <>
+    <Provider store={store}>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <Text>Test</Text>
+        <Test />
       </SafeAreaView>
-    </>
+    </Provider>
   );
 };
 
